@@ -1,0 +1,24 @@
+- contribution = @notification.contribution
+- project = contribution.project
+- detail = contribution.details.ordered.first
+- company_name = CatarseSettings[:company_name]
+- contact_email = CatarseSettings[:email_contact]
+
+|Olá, <strong>#{contribution.user.display_name}</strong>!
+br
+br
+|O projeto #{contribution.project.name} foi #{project.decorator.display_mailer_status} aqui no #{company_name} e por isso reembolsamos o valor do seu apoio. O crédito efetivo deverá acontecer na fatura vigente, caso ela ainda esteja em aberto, ou na subsequente, caso a desse mês já esteja fechada.
+br
+br
+- if detail.payment.gateway_data['paid_amount'].present?
+  | <strong>Valor devolvido:</strong> #{number_to_currency detail.payment.gateway_data['paid_amount']/100.0, precision: 2}
+- else
+  | <strong>Valor devolvido:</strong> #{number_to_currency detail.value, precision: 2}
+br
+|<strong>Data do reembolso:</strong> #{I18n.l detail.refunded_at}
+br
+br
+|O reembolso deve aparecer na fatura em nome do <strong>Pagar.me</strong> (meio de pagamento que usamos) ou do <strong>Catarse</strong>.
+br
+br
+= render partial: 'user_notifier/mailer/contact_info'

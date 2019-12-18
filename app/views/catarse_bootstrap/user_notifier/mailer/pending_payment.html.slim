@@ -1,0 +1,21 @@
+- contribution = @notification.contribution
+
+- if contribution.user.name
+  |Olá, <strong>#{contribution.user.name}</strong>!
+- else
+  |Olá!
+br
+br
+' Verificamos que você iniciou um apoio para o projeto #{link_to contribution.project.name, project_by_slug_url(contribution.project.permalink, {ref: 'notificacao_pending',utm_source:'notification',utm_medium:'email',utm_campaign:'pending_payment_link',utm_content:contribution.project.name})},
+|porém não chegou a concluí-lo.
+br
+br
+| Para finalizar a sua contribuição, basta clicar no botão abaixo e iniciar um novo apoio:
+
+p
+  center
+    = link_to edit_project_contribution_url(project_id: contribution.project.id, id: contribution.id, ref: 'notification_pending', utm_source:'notification',utm_medium:'email',utm_campaign:'pending_payment_link',utm_content:'Faça agora sua contribuição de onde parou'), target: '__blank' do
+      = image_tag "#{CatarseSettings[:base_url]}/assets/catarse_bootstrap/pending_payment.png"
+
+
+= render partial: 'user_notifier/mailer/contact_info'
