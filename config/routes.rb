@@ -172,13 +172,13 @@ Catarse::Application.routes.draw do
 
     get '/terms-of-use' => redirect('http://ineksepeti.com//legal/termos-de-uso')
     get '/privacy-policy' => redirect('http://ineksepeti.com//legal/politica-de-privacidade')
-    get '/start' => redirect('http://ineksepeti.com//comece')
-    get '/start-sub' => redirect('http://ineksepeti.com//comece')
+    get '/start' => redirect('http://ineksepeti.com/comece')
+    get '/start-sub' => redirect('http://ineksepeti.com/comece')
     get '/jobs' => 'high_voltage/pages#show', id: 'jobs'
     get '/hello' => redirect('/start')
     get '/press' => redirect('http://ineksepeti.com//imprensa')
-    get '/assets' => redirect('http://ineksepeti.com//assets')
-    get '/guides' => redirect('http://fazum.catarse.me/guia-financiamento-coletivo')
+    get '/assets' => redirect('http://ineksepeti.com/assets')
+    get '/guides' => redirect('http://ineksepeti.com/guia-financiamento-coletivo')
     get '/new-admin' => 'high_voltage/pages#show', id: 'new_admin'
     get '/explore' => 'high_voltage/pages#show', id: 'explore'
     get '/team' => redirect('http://ineksepeti.com//nosso-time')

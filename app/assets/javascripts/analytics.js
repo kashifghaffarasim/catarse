@@ -56,7 +56,7 @@ window.CatarseAnalytics = window.CatarseAnalytics || (function(){
     }
   })();
 
-  var base_url = 'www.catarse.me', cookie_url='.catarse.me';
+  var base_url = 'www.ineksepeti.com', cookie_url='.ineksepeti.com';
 
   var ctrse_sid=(function(cookie){
     var sid=cookie.get('ctrse_sid');
