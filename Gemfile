@@ -7,7 +7,7 @@ ruby '2.4.4'
 gem 'rails', '~> 4.2.11'
 
 
-gem 'rails-html-sanitizer', '~> 1.0.4'
+gem 'rails-html-sanitizer', '~> 1.4.3'
 
 gem 'protected_attributes'
 gem 'rails-observers'
